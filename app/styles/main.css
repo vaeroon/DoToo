@@ -1,0 +1,118 @@
+html, body {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    background: #262636;
+}
+
+
+* {
+    font-family: sans-serif;
+    -webkit-box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+
+a:active, a:hover {
+    outline: 0;
+}
+
+
+
+
+.header {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.main-wrapper {
+    max-width: 750px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 4px;
+    min-height: 600px;
+    margin: 1em auto;
+    box-shadow: 0px 0px 1px #333;
+}
+
+.main-title {
+    text-align: left;
+    padding: 0.5em;
+    border-bottom: 1px inset #d0d0d0;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(144,144,144,1)), color-stop(100%,rgba(240,240,240,1)));
+    color: #337;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.todo-list {
+    list-style-type: none;
+    padding: 1em;
+}
+
+.todo-item {
+    height: 3em;
+    line-height: 3;
+    border-bottom: 1px inset #e6e6e6;
+    list-style-position: outside;
+}
+
+.todo-done {
+    vertical-align: middle;
+    -webkit-appearance: none;
+    height: 1.8em;
+    width: 1.8em;
+    border: 1px dashed #d0d0d0;
+    outline: 0 none;
+    cursor: pointer;
+}
+
+.todo-text {
+    height: 1.8em;
+    width: 500px;
+    border: 1px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    -webkit-user-select: none;
+    transition: background 0.25s;
+    padding: 0.2em 1em;
+    color: #777;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.todo-text:focus {
+    border: 1px solid #e6e6e6;
+    background: #fff;
+}
+
+.todo-text:hover {
+    cursor: pointer;
+    background: #f8f8f8;
+    border: 1px solid #e6e6e6;
+    transition: all 0.25sec;
+}
+
+.todo-done:checked + .todo-text {
+    text-decoration: line-through;
+    color: #bbb;
+}
+
+.todo-done:hover:before, .todo-done:checked:before {
+    content: '✔';
+    font-size: 2.4em;
+    color: #ccc;
+    margin-left: 0;
+    line-height: 0.8;
+    outline: 0 none;
+}
+
+.todo-done:checked:before {
+    color: #aaa;
+}

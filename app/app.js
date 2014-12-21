@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc overview
- * @name doTooApp
+ * @name DoToo
  * @description
- * # doTooApp
+ * # DoToo is a 'To Do' app
  *
  * Main module of the application.
  */

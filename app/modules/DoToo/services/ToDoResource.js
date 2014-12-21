@@ -1,4 +1,4 @@
-DoToo.factory('DoToo.Services.ToDoResource', [
+DoToo.service('DoToo.Services.ToDoResource', [
 	'DoToo.Services.LocalStorage',
 	function (LocalStorage) {
 		'use strict';
@@ -8,7 +8,7 @@ DoToo.factory('DoToo.Services.ToDoResource', [
 				return LocalStorage.get();
 			},
 			save: function (obj) {
-				LocalStorage.save(obj)
+				LocalStorage.save(obj);
 			}
 		};
 	}

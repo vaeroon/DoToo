@@ -13,16 +13,12 @@ coverage
 
 .lock-wscript
 
-build/Release
-
-node_modules
+node_modules/
 
 *.sublime-workspace
 *.sublime-project
 
 .idea/
-
-out/
 
 .idea_modules/
 

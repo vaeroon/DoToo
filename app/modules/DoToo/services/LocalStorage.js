@@ -1,16 +1,19 @@
-DoToo.factory('DoToo.LocaStorage', [
-	function () {
+DoToo.service('DoToo.Services.LocalStorage', [
+	'$rootScope',
+	function ($rootScope) {
 		'use strict';
+
+		window.addEventListener('storage', function (evt) {
+			$rootScope.$emit('DoToo.update', {todos: evt.newValue});
+			$rootScope.$apply();
+		}, false);
 
 		return {
 			get: function () {
-				return [
-					{id: 'todo-1', text: 'Task 1 - some markup structure'},
-					{id: 'todo-2', text: 'Task 2 - some css'}
-				];
+				return JSON.parse(localStorage.getItem('DoToo.todos'));
 			},
-			save: function () {
-				return true;
+			save: function (todos) {
+				localStorage.setItem('DoToo.todos', JSON.stringify(todos));
 			}
 		};
 	}

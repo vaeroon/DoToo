@@ -1,10 +1,12 @@
-DoToo.provider('DoToo.Models.ToDoList', [
+DoToo.factory('DoToo.Models.ToDoList', [
 	'DoToo.Models.ToDo',
 	function (ToDo) {
 		'use strict';
 
 		function ToDoList (arr) {
-			this.todos = arr || [];
+			this.all = (arr || []).map(function (obj) {
+				return new ToDo(obj);
+			});
 		}
 
 		ToDoList.prototype.add = function (text) {

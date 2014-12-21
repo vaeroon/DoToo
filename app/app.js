@@ -8,4 +8,4 @@
  *
  * Main module of the application.
  */
-angular.module('DoToo', []);
+var DoToo = angular.module('DoToo', []);

@@ -1,0 +1,6 @@
+<ul class="todo-list">
+	<li id="{{todo.id}}" class="todo-item" ng-repeat="todo in todos track by todo.id">
+		<input type="checkbox" class="todo-done" ng-model="todo.isDone" ng-model-options="{ debounce: 500 }">
+		<input type="text" maxlength="140" class="todo-text" ng-model="todo.text" ng-model-options="{ debounce: 500 }">
+	</li>
+</ul>

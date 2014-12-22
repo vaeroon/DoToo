@@ -40,6 +40,7 @@ a:active, a:hover {
 	text-align: left;
 	padding: 0.5em;
 	border-bottom: 1px inset #d0d0d0;
+	/* TODO: add vendor prefixed rules for other browsers */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(144, 144, 144, 1)), color-stop(100%, rgba(240, 240, 240, 1)));
 	color: #337;
 	border-top-left-radius: 4px;

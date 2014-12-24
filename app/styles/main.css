@@ -47,7 +47,7 @@ a:active, a:hover {
 	border-top-right-radius: 4px;
 }
 
-.todo-list {
+.todo-list, .new-todo {
 	list-style-type: none;
 	padding: 1em;
 }

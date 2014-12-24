@@ -10,11 +10,11 @@ DoToo.factory('DoToo.Models.ToDoList', [
 		}
 
 		ToDoList.prototype.add = function (text) {
-			this.todos.push(new ToDo(text, false));
+			this.all.push(new ToDo(text, false));
 		};
 
 		ToDoList.prototype.remove = function (todo) {
-			this.todos.splice(this.todos.indexOf(todo));
+			this.all.splice(this.all.indexOf(todo), 1);
 		};
 
 		return ToDoList;

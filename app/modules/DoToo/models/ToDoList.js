@@ -14,7 +14,10 @@ DoToo.factory('DoToo.Models.ToDoList', [
 		};
 
 		ToDoList.prototype.remove = function (todo) {
-			this.all.splice(this.all.indexOf(todo), 1);
+			var idx = this.all.indexOf(todo);
+			if (idx > -1) {
+				this.all.splice(idx, 1);
+			}
 		};
 
 		return ToDoList;

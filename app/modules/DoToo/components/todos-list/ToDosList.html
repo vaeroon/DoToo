@@ -1,6 +1,6 @@
 <form name="todoForm" novalidate>
 	<ul class="todo-list">
-		<li id="{{todo.id}}" class="todo-item" ng-repeat="todo in todos track by todo.id">
+		<li id="{{todo.id}}" ng-repeat="todo in todos track by todo.id">
 			<dotoo-todo todo="todo"></dotoo-todo>
 		</li>
 	</ul>

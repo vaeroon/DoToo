@@ -5,7 +5,7 @@ DoToo.directive('dotooNewTodo', function () {
 		restrict: 'E',
 		transclude: true,
 		scope: {
-			todo: '=?todo'
+			ToDoService: '=service'
 		},
 		templateUrl: 'modules/DoToo/components/new-todo/NewToDo.html',
 		controller: 'DoToo.Components.NewToDo.NewToDoController'

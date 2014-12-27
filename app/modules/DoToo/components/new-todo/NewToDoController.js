@@ -1,14 +1,14 @@
 DoToo.controller('DoToo.Components.NewToDo.NewToDoController', [
 	'$scope',
 	'DoToo.Models.ToDo',
-	'DoToo.Services.ToDoService',
-	function ($scope, ToDo, ToDoService) {
+	function ($scope, ToDo) {
 		'use strict';
 
 		$scope.todo = new ToDo();
+		$scope.todo.id = '';
 
 		$scope.add = function () {
-			ToDoService.add($scope.todo);
+			$scope.ToDoService.add($scope.todo);
 			$scope.todo = new ToDo();
 		};
 	}

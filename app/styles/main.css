@@ -7,7 +7,11 @@ html, body {
 
 * {
 	font-family: sans-serif;
-	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*:focus {
+	outline: 0 none;
 }
 
 body {
@@ -57,6 +61,14 @@ a:active, a:hover {
 	line-height: 3;
 	border-bottom: 1px inset #e6e6e6;
 	list-style-position: outside;
+	position: relative;
+	transition: all ease-in-out 0.5s;
+}
+
+.new-todo .todo-item {
+	border: 1px outset #e6e6e6;
+	background: #fffff0;
+	height: 3.2em;
 }
 
 .todo-done {
@@ -70,14 +82,14 @@ a:active, a:hover {
 }
 
 .todo-text {
-	height: 1.8em;
+	height: 2.55em;
 	width: 500px;
 	border: 1px solid transparent;
 	background: transparent;
 	cursor: pointer;
 	-webkit-user-select: none;
-	transition: background 0.5s;
-	padding: 0.2em 1em;
+	transition: background ease-in-out 0.5s;
+	padding: 0.2em 1.8em 0.2em 1em;
 	color: #777;
 	-webkit-font-smoothing: subpixel-antialiased;
 }
@@ -89,9 +101,30 @@ a:active, a:hover {
 
 .todo-text:hover {
 	cursor: pointer;
-	background: #f8f8f8;
 	border: 1px solid #e6e6e6;
+}
+
+.todo-delete {
+	-webkit-appearance: none;
+	border: 0 none;
+	background: transparent;
+	position: absolute;
+	right: 0;
+	display: inline-block;
+	height: 2.55em;
+	width: 1.8em;
+	cursor: pointer;
+	float: right;
+	margin: 0;
+	color: #e6e6e6;
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 2.55;
 	transition: all ease-in-out 0.5s;
+}
+
+.todo-item:hover .todo-delete, .todo-text:hover + .todo-delete, .todo-text:focus + .todo-delete, .todo-delete:focus {
+	color: #666666;
 }
 
 .todo-done:checked + .todo-text {
@@ -110,4 +143,10 @@ a:active, a:hover {
 
 .todo-done:checked:before {
 	color: #aaa;
+}
+
+.collapse {
+	height: 0;
+	overflow: hidden;
+	border-color: transparent;
 }

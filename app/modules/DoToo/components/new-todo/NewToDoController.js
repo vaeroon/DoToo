@@ -4,12 +4,18 @@ DoToo.controller('DoToo.Components.NewToDo.NewToDoController', [
 	function ($scope, ToDo) {
 		'use strict';
 
-		$scope.todo = new ToDo();
-		$scope.todo.id = '';
+		var createToDo = function () {
+			$scope.todo = new ToDo();
+			$scope.todo.id = '';
+		};
+
+		createToDo();
 
 		$scope.add = function () {
-			$scope.ToDoService.add($scope.todo);
-			$scope.todo = new ToDo();
+			if ($scope.newtodoForm.$valid) {
+				$scope.ToDoService.add($scope.todo);
+				createToDo();
+			}
 		};
 	}
 ]);

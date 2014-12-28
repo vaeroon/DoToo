@@ -5,7 +5,7 @@ DoToo.controller('DoToo.Components.ToDosList.ToDosListController', [
 
 		$scope.todos = $scope.ToDoService.get();
 		$scope.$watch('todoForm.$dirty', function (newVal, oldVal) {
-			if (newVal && !oldVal) {
+			if (newVal && !oldVal && $scope.todoForm.$valid) {
 				$scope.ToDoService.save();
 				$scope.todoForm.$setPristine();
 			}
@@ -17,6 +17,7 @@ DoToo.controller('DoToo.Components.ToDosList.ToDosListController', [
 		});
 		$scope.$on('DoToo.todo.remove', function (evt, data) {
 			$scope.ToDoService.remove(data.todo);
+			$scope.$apply();
 		});
 	}
 ]);

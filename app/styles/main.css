@@ -2,7 +2,7 @@ html, body {
 	font-size: 12px;
 	margin: 0;
 	padding: 0;
-	background: #262636;
+	background: #dddddd;
 }
 
 * {
@@ -32,23 +32,23 @@ a:active, a:hover {
 
 .main-wrapper {
 	max-width: 750px;
-	margin: 0 auto;
 	background: #fff;
 	border-radius: 4px;
 	min-height: 600px;
 	margin: 1em auto;
-	box-shadow: 0 0 1px #333;
+	box-shadow: 0 0 15px #666;
 }
 
 .main-title {
 	text-align: left;
 	padding: 0.5em;
 	border-bottom: 1px inset #d0d0d0;
-	/* TODO: add vendor prefixed rules for other browsers */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(144, 144, 144, 1)), color-stop(100%, rgba(240, 240, 240, 1)));
 	color: #337;
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
+	-webkit-user-select: none;
+	cursor: default;
 }
 
 .todo-list, .new-todo {
@@ -59,16 +59,15 @@ a:active, a:hover {
 .todo-item {
 	height: 3em;
 	line-height: 3;
-	border-bottom: 1px inset #e6e6e6;
+	outline: 1px dotted #e6e6e6;
 	list-style-position: outside;
 	position: relative;
 	transition: all ease-in-out 0.5s;
+	margin-top: 0.6em;
 }
 
 .new-todo .todo-item {
-	border: 1px outset #e6e6e6;
 	background: #fffff0;
-	height: 3.2em;
 }
 
 .todo-done {
@@ -84,7 +83,7 @@ a:active, a:hover {
 .todo-text {
 	height: 2.55em;
 	width: 500px;
-	border: 1px solid transparent;
+	border: 0 none;
 	background: transparent;
 	cursor: pointer;
 	-webkit-user-select: none;
@@ -94,14 +93,8 @@ a:active, a:hover {
 	-webkit-font-smoothing: subpixel-antialiased;
 }
 
-.todo-text:focus {
-	border: 1px solid #e6e6e6;
-	background: #fff;
-}
-
 .todo-text:hover {
 	cursor: pointer;
-	border: 1px solid #e6e6e6;
 }
 
 .todo-delete {

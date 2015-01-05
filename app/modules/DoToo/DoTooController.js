@@ -1,20 +1,19 @@
-DoToo.controller('DoToo', [
+DoToo.controller('DoToo.DoTooController', [
 	'$scope',
 	'$rootScope',
 	'DoToo.Services.ToDoService',
 	function ($scope, $rootScope, ToDoService) {
 		'use strict';
 
-		$scope.todos = ToDoService.get();
+		$scope.ToDoService = ToDoService;
 		$scope.$watch('todoForm.$dirty', function (newVal, oldVal) {
 			if (newVal && !oldVal) {
-				ToDoService.save($scope.todos.all);
+				ToDoService.save();
 				$scope.todoForm.$setPristine();
 			}
 		});
-		$rootScope.$on('DoToo.update', function (evt, data) {
-			debugger;
-			$scope.todos = ToDoService.set(JSON.parse(data.todos));
+		$rootScope.$on('DoToo.update', function () {
+			$scope.ToDoService.lastUpdated = + new Date();
 		}, false);
 	}
 ]);

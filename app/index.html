@@ -16,28 +16,30 @@
 		</header>
 
 		<article>
-			<main ng-controller="DoToo"><!-- main controller -->
-
-				<dotoo-new-todo></dotoo-new-todo><!-- 'new to-do' component -->
-
-				<dotoo-todos-list todos="todos.all"></dotoo-todos-list><!-- 'list of all to-do' component -->
-
-			</main>
+			<dotoo></dotoo>
 		</article>
 	</div>
 
 	<script src="lib/jquery-2.1.1.min.js"></script>
 	<script src="lib/angular.min.js"></script>
 	<script src="app.js"></script>
+	<script src="modules/DoToo/config/ActionNames.js"></script>
+	<script src="modules/DoToo/config/KeyActions.js"></script>
+	<script src="modules/DoToo/utils/utils.js"></script>
 	<script src="modules/DoToo/models/ToDo.js"></script>
 	<script src="modules/DoToo/models/ToDoList.js"></script>
 	<script src="modules/DoToo/services/LocalStorage.js"></script>
 	<script src="modules/DoToo/services/ToDoResource.js"></script>
 	<script src="modules/DoToo/services/ToDoService.js"></script>
+	<script src="modules/DoToo/components/action-listener/ActionListenerDirective.js"></script>
+	<script src="modules/DoToo/components/action-listener/ActionListenerController.js"></script>
 	<script src="modules/DoToo/components/todos-list/ToDosListDirective.js"></script>
+	<script src="modules/DoToo/components/todos-list/ToDosListController.js"></script>
 	<script src="modules/DoToo/components/todo/ToDoDirective.js"></script>
+	<script src="modules/DoToo/components/todo/ToDoController.js"></script>
 	<script src="modules/DoToo/components/new-todo/NewToDoController.js"></script>
 	<script src="modules/DoToo/components/new-todo/NewToDoDirective.js"></script>
-	<script src="modules/DoToo/DoToo.js"></script>
+	<script src="modules/DoToo/DoTooController.js"></script>
+	<script src="modules/DoToo/DoTooDirective.js"></script>
 </body>
 </html>

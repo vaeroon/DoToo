@@ -5,8 +5,9 @@ DoToo.directive('dotooTodosList', function () {
 		restrict: 'E',
 		transclude: true,
 		scope: {
-			todos: '=todos'
+			ToDoService: '=service'
 		},
-		templateUrl: 'modules/DoToo/components/todos-list/ToDosList.html'
+		templateUrl: 'modules/DoToo/components/todos-list/ToDosList.html',
+		controller: 'DoToo.Components.ToDosList.ToDosListController'
 	};
 });

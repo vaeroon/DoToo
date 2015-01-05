@@ -12,17 +12,20 @@ DoToo.service('DoToo.Services.ToDoService', [
 			},
 			set: function (data) {
 				todos = new ToDoList(data);
-				return todos;
+				return todos.all;
 			},
-			save: function (obj) {
-				ToDoResource.save(obj);
+			save: function () {
+				ToDoResource.save(todos.all);
 			},
 			add: function (todo) {
 				todos.add(todo);
+				this.save();
 			},
 			remove: function (id) {
 				todos.remove(id);
-			}
+				this.save();
+			},
+			lastUpdated: + new Date()
 		};
 	}
 ]);
